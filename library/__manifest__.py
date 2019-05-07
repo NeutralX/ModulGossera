@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Library",
+    'name': "Protectora d'animals Managment",
 
-    'summary': """Modul per a gestionar una llibreria""",
+    'summary': """Modul per a gestionar una protectora d'animals""",
 
-    'description': """Modul per a gestionar una llibreria M10""",
+    'description': """Modul per a gestionar una protectora d'animals""",
 
-    'author': "Alex Romero",
-    'website': "http://www.romero.com",
+    'author': "Alex Romero & Eduard Vila",
+    'website': "http://www.romeroandvila.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/11.0/odoo/addons/base/module/module_data.xml
@@ -21,10 +21,11 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/book_view.xml',
-        'views/category_view.xml',
-        'views/author_view.xml',
-        'views/templates.xml',
+        'views/gos_view.xml',
+        'views/race_gos_view.xml',
+        'views/gat_view.xml',
+        'views/race_gat_view.xml',
+        'views/inventari_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,107 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="protectora_race_gos_form_view">
+      <field name="name">protectora.race.gos.form.view</field>
+      <field name="model">protectora.race.gos</field>
+      <field name="arch" type="xml">
+          <form string="Form race Gos">
+            <sheet>
+              <group>
+                <field name="name"/>
+              </group>
+            </sheet>
+          </form>
+      </field>
+  </record>
+
+<!-- Tree view -->
+    <record id="protectora_race_gos_tree_view" model="ir.ui.view">
+        <field name="name">protectora.race.gos.tree.view</field>
+        <field name="model">protectora.race.gos</field>
+        <field name="arch" type="xml">
+            <tree string="Tree race Gos">
+               <field name="name"/>
+            </tree>
+        </field>
+    </record>
+<record id="action_protectora_race_gos" model="ir.actions.act_window">
+      <field name="name">Races Gos</field>
+     <field name="type">ir.actions.act_window</field>
+     <field name="res_model">protectora.race.gos</field>
+     <field name="view_mode">tree,form</field>
+</record>
+
+
+      <record id="protectora_race_gos_search_view" model="ir.ui.view">
+            <field name="name">protectora.search.view</field>
+            <field name="model">protectora.race.gos</field>
+            <field name="arch" type="xml">
+                <search string="raceGos Search view">
+                    <field name="name" string="Name"/>
+                </search>
+            </field>
+</record>
+<!-- Menus -->
+
+    <menuitem name="Protectora" id="protectora_menu_root" sequence="1"/>
+   <menuitem name="Management" id="protectora_management_menu_category" sequence="1" parent="protectora_menu_root"/>
+   <menuitem name="Races Gos" id="action_protectora_race_gos_menu" sequence="1" parent="protectora_management_menu_category" action="action_protectora_race_gos"/>
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="protectora.list">
+      <field name="name">protectora list</field>
+      <field name="model">protectora.protectora</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="protectora.action_window">
+      <field name="name">protectora window</field>
+      <field name="res_model">protectora.protectora</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="protectora.action_server">
+      <field name="name">protectora server</field>
+      <field name="model_id" ref="model_protectora_protectora"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="protectora" id="protectora.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="protectora.menu_1" parent="protectora.menu_root"/>
+    <menuitem name="Menu 2" id="protectora.menu_2" parent="protectora.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="protectora.menu_1_list" parent="protectora.menu_1"
+              action="protectora.action_window"/>
+    <menuitem name="Server to list" id="protectora" parent="protectora.menu_2"
+              action="protectora.action_server"/>
+    -->
+  </data>
+</odoo>

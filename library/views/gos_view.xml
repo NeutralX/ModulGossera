@@ -1,0 +1,116 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="protectora_gos_form_view">
+      <field name="name">protectora.gos.form.view</field>
+      <field name="model">protectora.gos</field>
+      <field name="arch" type="xml">
+          <form string="Form Gos">
+            <sheet>
+              <field name="imatge" widget="image"/>
+              <group>
+                <field name="nom"/>
+                <field name="edat"/>
+                <field name="vacunat"/>
+                <field name="sexe"/>
+                  <field name="dataEntrada"/>
+                  <field name="race"/>
+              </group>
+            </sheet>
+          </form>
+      </field>
+  </record>
+
+<!-- Tree view -->
+    <record id="protectora_gos_tree_view" model="ir.ui.view">
+        <field name="name">protectora.gos.tree.view</field>
+        <field name="model">protectora.gos</field>
+        <field name="arch" type="xml">
+            <tree string="Tree Gos">
+               <field name="nom"/>
+                <field name="edat"/>
+                <field name="sexe"/>
+                <field name="race"/>
+            </tree>
+        </field>
+    </record>
+<record id="action_protectora_gos" model="ir.actions.act_window">
+      <field name="name">Gossos</field>
+     <field name="type">ir.actions.act_window</field>
+     <field name="res_model">protectora.gos</field>
+     <field name="view_mode">tree,form</field>
+</record>
+
+
+      <record id="protectora_gos_search_view" model="ir.ui.view">
+            <field name="name">protectora.search.view</field>
+            <field name="model">protectora.gos</field>
+            <field name="arch" type="xml">
+                <search string="Gos Search view">
+                    <field name="nom" string="Nom"/>
+                </search>
+            </field>
+</record>
+<!-- Menus -->
+
+   <menuitem name="Protectora" id="protectora_menu_root" sequence="1"/>
+   <menuitem name="Management" id="protectora_management_menu_category" sequence="1" parent="protectora_menu_root"/>
+   <menuitem name="Gossos" id="action_protectora_gos_menu" sequence="1" parent="protectora_management_menu_category" action="action_protectora_gos"/>
+
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="library.list">
+      <field name="name">library list</field>
+      <field name="model">library.library</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="library.action_window">
+      <field name="name">library window</field>
+      <field name="res_model">library.library</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="library.action_server">
+      <field name="name">library server</field>
+      <field name="model_id" ref="model_library_library"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="library" id="library.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="library.menu_1" parent="library.menu_root"/>
+    <menuitem name="Menu 2" id="library.menu_2" parent="library.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="library.menu_1_list" parent="library.menu_1"
+              action="library.action_window"/>
+    <menuitem name="Server to list" id="library" parent="library.menu_2"
+              action="library.action_server"/>
+    -->
+  </data>
+</odoo>

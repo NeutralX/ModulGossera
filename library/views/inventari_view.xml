@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="protectora_inventari_form_view">
+            <field name="name">protectora.inventari.form.view</field>
+            <field name="model">protectora.inventari</field>
+            <field name="arch" type="xml">
+                <form string="Form inventari">
+                    <sheet>
+                        <field name="imatge" widget="image"/>
+                        <group>
+                            <field name="data"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree view -->
+        <record id="protectora_inventari_tree_view" model="ir.ui.view">
+            <field name="name">protectora.inventari.tree.view</field>
+            <field name="model">protectora.inventari</field>
+            <field name="arch" type="xml">
+                <tree string="Tree inventari">
+                    <field name="data"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_protectora_inventari" model="ir.actions.act_window">
+            <field name="name">Inventari</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">protectora.inventari</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- Menus -->
+
+        <menuitem name="Protectora" id="protectora_menu_root" sequence="1"/>
+        <menuitem name="Management" id="protectora_management_menu_category" sequence="1"
+                  parent="protectora_menu_root"/>
+        <menuitem name="Inventari" id="action_protectora_inventari_menu" sequence="1"
+                  parent="protectora_management_menu_category" action="action_protectora_inventari"/>
+
+    </data>
+</odoo>
