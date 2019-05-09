@@ -13,6 +13,7 @@ class ProtectoraGos(models.Model):
     dataEntrada = fields.Date(string="Data Entrada")
     race = fields.Many2one("protectora.race.gat", string="Race")
 
+
     # isbn = fields.Char(string="ISBN", size=13)
     # date = fields.Date(string="Release Date")
 

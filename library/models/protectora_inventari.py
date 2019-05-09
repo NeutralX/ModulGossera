@@ -2,13 +2,13 @@
 
 from odoo import models, fields, api, exceptions
 
-
 class ProtectoraInventari(models.Model):
     _name = 'protectora.inventari'
 
     imatge = fields.Binary()
     data = fields.Date(string="Data")
-    llistamenjar = fields.Many2Many('protectora.menjar', string="Llista de menjar")
+    llistamenjar = fields.Many2many('protectora.menjar', string="Llista de menjar")
+
 
     @api.onchange('data')
     def onchange_date(self):
@@ -17,3 +17,15 @@ class ProtectoraInventari(models.Model):
             raise exceptions.UserError(
                 "La data d'entrada hauria de ser anterior a avui."
             )
+
+# class library(models.Model):
+#     _name = 'library.library'
+
+#     name = fields.Char()
+#     value = fields.Integer()
+#     value2 = fields.Float(compute="_value_pc", store=True)
+#     description = fields.Text()
+#
+#     @api.depends('value')
+#     def _value_pc(self):
+#         self.value2 = float(self.value) / 100

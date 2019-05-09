@@ -25,6 +25,8 @@
         'views/race_gos_view.xml',
         'views/gat_view.xml',
         'views/race_gat_view.xml',
+        'views/menjar_view.xml',
+        'views/medicina_view.xml',
         'views/inventari_view.xml',
     ],
     # only loaded in demonstration mode

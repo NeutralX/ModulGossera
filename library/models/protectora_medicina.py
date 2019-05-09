@@ -2,11 +2,11 @@
 
 from odoo import models, fields, api, exceptions
 
-class ProtectoraMenjar(models.Model):
-    _name = 'protectora.menjar'
+class ProtectoraMedicina(models.Model):
+    _name = 'protectora.medicina'
 
     imatge = fields.Binary()
     nom = fields.Char(string="Nom")
     marca = fields.Char(string="Marca")
-    quantitat = fields.Float("Quantitat en kg")
+    unitats = fields.Float("Quantitat en unitats")
     preu = fields.Float("Preu")
